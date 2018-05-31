@@ -9,15 +9,15 @@
     <div style="width:100%">
         <h1 style="text-align: center; margin-bottom:10px;">Rośliny w ofercie:</h1>
     </div>
-    {% for plant in plants_list %}
-        <div class="col-sm-6 col-md-3 list-container">
-            <img class="list-img" src="{{ plant.img_src.url }}" />
-            <a href="{% url 'plants:detail' plant.pk %}">
-            <div class="caption">
+    {% for cat in categories %}
+        <div style="width:100%">
+            <h2>{{ cat.category_name }}</h2>
+            {% for plant in plants.filter(category=cat) %}
+                <h4>{{ plant.plant_name }}</h4>
+            {% endfor %}
                 <p>{{ plant.plant_name }}</p>
                 <p>{{plant.category.category_name}}</p>
             </div>
-            </a>
         </div>
     {% endfor %}
 </div>

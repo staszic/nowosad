@@ -6,7 +6,7 @@
     <title>{% block title %}{% endblock %} Gospodarstwo Ogrodnicze Nowosad</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
     <link rel="icon" href="{% static 'images/background.jpg' %}" type="image/x-icon"/>
-    <link rel="shortcut icon" href="{% static 'images/background.jng' %}" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{% static 'images/background.jpg' %}" type="image/x-icon"/>
     <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans" rel="stylesheet">
 </head>
 <body>
@@ -27,6 +27,7 @@
             <ul class="menu">
                 <li><a href="{% url 'main:index' %}">Strona Główna</a></li>
                 <li><a href="{% url 'plants:index' %}">Oferta</a></li>
+                <li><a href="{% url 'gallery:index' %}">Galeria</a></li>
                 <li><a href="{% url 'contact:index' %}">Kontakt</a></li>
             </ul>
         </nav>
