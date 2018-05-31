@@ -12,34 +12,12 @@
     {% for cat in categories %}
         <div style="width:100%">
             <h2>{{ cat.category_name }}</h2>
-            {% for plant in plants.filter(category=cat) %}
+            {% for plant in plants[cat] %}
                 <h4>{{ plant.plant_name }}</h4>
             {% endfor %}
-                <p>{{ plant.plant_name }}</p>
-                <p>{{plant.category.category_name}}</p>
             </div>
         </div>
     {% endfor %}
-</div>
-<div class="row content pagination" style="margin-top: 20px;">
-        {% if plants_list.has_previous %}
-            <div class="prev-pages">
-                <a href="?page=1">&laquo; pierwsza</a>
-                <a href="?page={{ plants_list.previous_page_number }}">poprzednia</a>
-            </div>
-        {% endif %}
-
-        {% if plants_list.has_next %}
-            <div class="next-pages">
-                <a href="?page={{ plants_list.next_page_number }}">następna</a>
-                <a href="?page={{ plants_list.paginator.num_pages }}">ostatnia &raquo;</a>
-            </div>
-        {% endif %}
-
-        <div class="current">
-            strona {{ plants_list.number }} z {{ plants_list.paginator.num_pages }}
-        </div>
-
 </div>
     {% else %}
       <p>There are no plants in the database.</p>
