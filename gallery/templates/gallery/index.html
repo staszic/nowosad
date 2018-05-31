@@ -9,29 +9,12 @@
             <div style="width:100%">
                 <h1 style="text-align: center; margin-bottom:10px;">Galeria</h1>
             </div>
-            {% for img in images_list %}
-                <div class="col-sm-6 col-md-3 list-container">
-                    <img class="gallery-img" src="{{ img.img_src.url }}" />
-                </div>
-            {% endfor %}
-        </div>
-        <div class="row content pagination" style="margin-top: 20px;">
-            {% if images_list.has_previous %}
-                <div class="prev-pages">
-                    <a href="?page=1">&laquo; pierwsza</a>
-                    <a href="?page={{ images_list.previous_page_number }}">poprzednia</a>
-                </div>
-            {% endif %}
-
-            {% if images_list.has_next %}
-                <div class="next-pages">
-                    <a href="?page={{ images_list.next_page_number }}">następna</a>
-                    <a href="?page={{ images_list.paginator.num_pages }}">ostatnia &raquo;</a>
-                </div>
-            {% endif %}
-
-            <div class="current">
-                strona {{ images_list.number }} z {{ images_list.paginator.num_pages }}
+            <div class="row-gallery">
+                {% for img in images_list %}
+                    <div class="column-gallery">
+                        <img class="gallery-img" src="{{ img.img_src.url }}" />
+                    </div>
+                {% endfor %}
             </div>
         </div>
         <div id="myModal" class="modal">
