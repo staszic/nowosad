@@ -5,10 +5,10 @@ from .models import Plant, Category
 # Create your views here.
 def index(request):
     plants = Plant.objects
-    plants_ch = plants.filter(category="Chryzantemy doniczkowe")
-    plants_by = plants.filter(category="Byliny i trawy")
-    plants_ba = plants.filter(category="Kwiaty balkonowe")
-    plants_ra = plants.filter(category="Kwiaty rabatowe")
+    plants_ch = plants.filter(category=3)
+    plants_by = plants.filter(category=4)
+    plants_ba = plants.filter(category=1)
+    plants_ra = plants.filter(category=2)
     context = {'chryzantemy': plants_ch,
                'balkonowe': plants_ba,
                'rabatowe': plants_ra,
