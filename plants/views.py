@@ -8,7 +8,7 @@ def index(request):
     plants_by_cat = {}
     plants = Plant.objects.order_by('category', 'plant_name')
     for cat in categories:
-        plants_by_cat[cat] = plants.filter(category=cat)
+        plants_by_cat[cat.category_name] = plants.filter(category=cat)
     context = {'categories': categories, 'plants': plants_by_cat}
     return render(request, 'plants/index.html', context)
 
