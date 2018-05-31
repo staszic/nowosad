@@ -12,7 +12,7 @@
     {% for cat in categories %}
         <div style="width:100%">
             <h2>{{ cat.category_name }}</h2>
-            {% for plant in plants[cat.category_name] %}
+            {% for plant in plants.cat.category_name %}
                 <h4>{{ plant.plant_name }}</h4>
             {% endfor %}
             </div>

@@ -11,17 +11,17 @@
             </div>
             <div class="row-gallery">
                     <div class="column-gallery">
-                        {% for img in images_list[:3] %}
+                        {% for img in images_list|slice:":4" %}
                             <img class="gallery-img" src="{{ img.img_src.url }}" />
                         {% endfor %}
                     </div>
                     <div class="column-gallery">
-                        {% for img in images_list[4:7] %}
+                        {% for img in images_list|slice:"4:7" %}
                             <img class="gallery-img" src="{{ img.img_src.url }}" />
                         {% endfor %}
                     </div>
                     <div class="column-gallery">
-                        {% for img in images_list[7:] %}
+                        {% for img in images_list|slice:"7:" %}
                             <img class="gallery-img" src="{{ img.img_src.url }}" />
                         {% endfor %}
                     </div>
@@ -46,10 +46,6 @@
     var modal = document.getElementById('myModal');
 
     var modalImg = document.getElementById("modal-img");
-    $('.gallery-img').each.onclick =function(){
-        modal.style.display = "block";
-        modalImg.src = this.src;
-    };
 
     var span = document.getElementsByClassName("close")[0];
 
