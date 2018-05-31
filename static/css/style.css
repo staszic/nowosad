@@ -353,35 +353,44 @@ input[type=submit]:hover {
     }
 }
 
-.row-gallery {
+.row-flexing {
   display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
 }
 
-.column-gallery {
+.column {
   flex: 25%;
   max-width: 25%;
   padding: 0 4px;
   box-sizing: border-box;
 }
 
-.column-gallery img {
+.column img {
   margin-top: 8px;
   vertical-align: middle;
   max-height: 100%;
   max-width: 100%;
 }
 
+.column ul {
+  list-style-type: none;
+}
+
+.column ul li {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
 @media screen and (max-width: 800px) {
-  .column-gallery {
+  .column {
     flex: 50%;
     max-width: 50%;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .column-gallery {
+  .column {
     flex: 100%;
     max-width: 100%;
   }
