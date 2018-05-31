@@ -198,11 +198,12 @@ input[type=submit]:hover {
 .col-sm-6, .col-md-3, .col-md-4, .col-md-6 {
     position: relative;
     min-height: 1px;
+    box-sizing: border-box;
 }
 
 @media (min-width: 992px) {
     .col-md-3 {
-        width: 23.7%;
+        width: 25%;
         float: left;
     }
     .col-md-4 {
@@ -216,7 +217,7 @@ input[type=submit]:hover {
 
 @media (max-width: 992px) {
     .col-sm-6 {
-        width: 48%;
+        width: 50%;
         float: left;
     }
 }

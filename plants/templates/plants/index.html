@@ -9,16 +9,49 @@
     <div style="width:100%">
         <h1 style="text-align: center; margin-bottom:10px;">Rośliny w ofercie:</h1>
     </div>
-    {% for cat in categories %}
-        <div style="width:100%">
-            <h2>{{ cat.category_name }}</h2>
-            {% for plant in plants.cat %}
-                <h4>{{ plant.plant_name }}</h4>
-            {% endfor %}
+    <div class="row-gallery">
+        <div class="column-gallery">
+            <h3>Kwiaty balkonowe:</h3>
+            <ul>
+                {% for bal in balkonowe %}
+                    <li>{{ bal }}</li>
+                {% endfor %}
+            </ul>
         </div>
-    {% endfor %}
+        <div class="column-gallery">
+            <h3>Kwiaty rabatowe:</h3>
+            <ul>
+                {% for rab in rabatowe %}
+                    <li>{{ rab }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="column-gallery">
+            <h3>Chryzantemy doniczkowe:</h3>
+            <ul>
+                {% for chr in chryzantemy %}
+                    <li>{{ chr }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="column-gallery">
+            <h3>Byliny i trawy:</h3>
+            <ul>
+                {% for byl in byliny %}
+                    <li>{{ byl }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 </div>
     {% else %}
-      <p>There are no plants in the database.</p>
+<div class="row content">
+    <div style="width:100%">
+        <h1 style="text-align: center; margin-bottom:10px;">Rośliny w ofercie:</h1>
+    </div>
+    <div style="width:100%">
+        <h3>Aktualnie nie posiadamy roślin w ofercie.</h3>
+    </div>
+</div>
     {% endif %}
 {% endblock %}
