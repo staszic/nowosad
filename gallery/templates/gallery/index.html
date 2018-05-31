@@ -9,23 +9,23 @@
             <div style="width:100%">
                 <h1 style="text-align: center; margin-bottom:10px;">Galeria</h1>
             </div>
-            <div class="row-gallery">
-                    <div class="column-gallery">
+            <div class="row-flexing">
+                    <div class="column">
                         {% for img in images_list|slice:":4" %}
                             <img class="gallery-img" src="{{ img.img_src.url }}" />
                         {% endfor %}
                     </div>
-                    <div class="column-gallery">
+                    <div class="column">
                         {% for img in images_list|slice:"4:8" %}
                             <img class="gallery-img" src="{{ img.img_src.url }}" />
                         {% endfor %}
                     </div>
-                    <div class="column-gallery">
+                    <div class="column">
                         {% for img in images_list|slice:"8:12" %}
                             <img class="gallery-img" src="{{ img.img_src.url }}" />
                         {% endfor %}
                     </div>
-                    <div class="column-gallery">
+                    <div class="column">
                         {% for img in images_list|slice:"12:" %}
                             <img class="gallery-img" src="{{ img.img_src.url }}" />
                         {% endfor %}
@@ -53,6 +53,14 @@
     var modalImg = document.getElementById("modal-img");
 
     var span = document.getElementsByClassName("close")[0];
+
+    var elements = document.getElementsByClassName("gallery-img");
+    for (var i = 0, len = elements.length; i < len; i++) {
+        elements[i].onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        }
+    }
 
     span.onclick = function() {
         modal.style.display = "none";
