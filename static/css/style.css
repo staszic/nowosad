@@ -382,7 +382,7 @@ input[type=submit]:hover {
     margin-bottom: 8px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 880px) {
   .column {
     flex: 50%;
     max-width: 50%;
